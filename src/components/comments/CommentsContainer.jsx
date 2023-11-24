@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 import { getCommentsData } from "../../data/comments";
-import CommentForm from './CommentForm';
+import CommentForm from "./CommentForm";
+import Comment from "./Comment";
 
 const CommentsContainer = ({ className }) => {
   const [comments, setComments] = useState([]);
+  const mainComments = comments.filter((comment) => comment.parent === null);
 
   useEffect(() => {
     (async () => {
@@ -32,12 +34,20 @@ const CommentsContainer = ({ className }) => {
     });
   };
 
-
   return (
     <div className={`${className}`}>
-        <CommentForm btnLabel="Send" formSubmitHandler={(value) => addCommentHandler(value)} />
+      <CommentForm
+        btnLabel="Send"
+        formSubmitHandler={(value) => addCommentHandler(value)}
+      />
+      <div className="space-y-4 mt-8">
+        {mainComments.map((comments) => {
+          <Comment comment={comment} />
+        })}
+
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default CommentsContainer;
