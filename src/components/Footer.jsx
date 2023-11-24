@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
         <div className="hidden md:flex flex-col items-center space-y-4 md:col-span-12 lg:col-span-10 ">
           <div className="bg-black text-dark-hard p-3 pb-3 rounded-full">
-          <p className="font-roboto text-white text-sm">Copyright © 2023, Spectacular Pen.</p>
+          <p className="text-dark-light text-sm">Copyright © 2023, Spectacular Pen.</p>
           </div>
         </div>
       </footer>
