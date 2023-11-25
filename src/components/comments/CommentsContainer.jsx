@@ -4,9 +4,10 @@ import { getCommentsData } from "../../data/comments";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 
-const CommentsContainer = ({ className }) => {
+const CommentsContainer = ({ className, logginedUseId }) => {
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter((comment) => comment.parent === null);
+  const [affectedComment, setAffectedComment] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -42,9 +43,15 @@ const CommentsContainer = ({ className }) => {
       />
       <div className="space-y-4 mt-8">
         {mainComments.map((comments) => {
-          <Comment comment={comment} />
+          <Comment
+          key={comment._id}
+            comment={comment}
+            logginedUseId={logginedUseId}
+            affectedComment={affectedComment}
+            setAffectedComment={setAffectedComment}
+            addComment={addComment}
+          />;
         })}
-
       </div>
     </div>
   );
