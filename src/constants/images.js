@@ -6,6 +6,10 @@ import ctaImage from "../assets/Ctaimage.png"
 import Footer from "../assets/Footer.png"
 import writer from "../assets/writer.png"
 import Content from "../assets/Content.png"
+const samplePostImage = "/images/sample.jpg";
+const userImage = "/images/write.avif";
+
+
 const Images = [
     Logo,
     HeroImage,
@@ -15,6 +19,8 @@ const Images = [
     Footer,
     writer,
     Content,
+    samplePostImage,
+    userImage,
 ];
 
 export default Images;

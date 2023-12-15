@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SuggestedPosts = ({ className, header, posts = [], tags }) => {
   return (

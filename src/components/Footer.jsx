@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTelegram } from "react-icons/fa";
 
-import  images  from "../constants/images.jsx";
+import images from "../constants/images";
 
 const Footer = () => {
   return (
